@@ -3,11 +3,11 @@ $nomeCompleto = "";
 $usuario = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomeCompleto = $_POST["nome"] ?? "";
-    // Remove espaços no início e fim
+    // ele faz a remoção dos espaços no início e fim
     $usuario = trim($nomeCompleto);
-    // Converte para minúsculas
+    // converte para minúsculas
     $usuario = strtolower($usuario);
-    // Substitui espaços internos por ponto
+    // substitui espaços internos por ponto
     $usuario = str_replace(" ", ".", $usuario);
 }
 ?>

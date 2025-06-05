@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 $resultado = "";
 $valor = "";
@@ -79,4 +80,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
     </div>
 </body>
-</html>

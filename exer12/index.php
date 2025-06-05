@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!is_numeric($precoProduto) || $precoProduto <= 0) {
         $erro = "Digite um valor válido para o produto.";
     } else {
-        $desconto = rand(5, 25); // Percentual de desconto aleatório entre 5% e 25%
+        $desconto = rand(5, 25); //desconto aleatório entre 5% e 25%
         $valorDesconto = $precoProduto * ($desconto / 100);
         $precoFinal = $precoProduto - $valorDesconto;
     }

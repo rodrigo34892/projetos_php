@@ -6,9 +6,9 @@ $erro = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $frase = $_POST["frase"] ?? "";
     if (empty($frase)) {
-     $erro = "Digite uma frase para formatar"
+     $erro = "Digite uma frase para formatar";
     } else {
-        // Converte tudo para minúsculas e depois coloca a primeira letra de cada palavra em maiúscula
+        // conversão de minúsculas e depois coloca a primeira letra de cada palavra em maiúscula
         $titulo = ucwords(strtolower($frase));
     }
 }

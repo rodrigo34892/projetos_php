@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($frase) || empty($palavra)) {
         $erro = "Preencha a frase e a palavra a censurar.";
     } else {
-        // Substitui todas as ocorrências da palavra (case-insensitive) por ***
+        // substitui todas as ocorrências da palavra (case-insensitive) por ***
         $resultado = str_ireplace($palavra, "***", $frase);
     }
 }
