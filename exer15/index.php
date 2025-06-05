@@ -1,17 +1,14 @@
 <?php
-$resultado = "";
-$numero = "";
-
+$nomeCompleto = "";
+$usuario = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $numero = $_POST["numero"] ?? "";
-    if (!is_numeric($numero)) {
-        $resultado = "Por favor, digite um número válido.";
-    } else {
-        $resultado = "Tabuada do <strong>$numero</strong>:<br>";
-        for ($i = 1; $i <= 10; $i++) {
-            $resultado .= "$numero x $i = <strong>" . ($numero * $i) . "</strong><br>";
-        }
-    }
+    $nomeCompleto = $_POST["nome"] ?? "";
+    // Remove espaços no início e fim
+    $usuario = trim($nomeCompleto);
+    // Converte para minúsculas
+    $usuario = strtolower($usuario);
+    // Substitui espaços internos por ponto
+    $usuario = str_replace(" ", ".", $usuario);
 }
 ?>
 
@@ -20,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabuada</title>
+    <title>Gerador de Nome de Usuário</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             text-align: center;
         }
-        input[type="number"] {
+        input[type="text"] {
             padding: 8px;
             border-radius: 4px;
             border: 1px solid #ccc;
-            width: 120px;
+            width: 220px;
             margin-right: 10px;
         }
         button {
@@ -60,13 +57,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-        <h1>Tabuada</h1>
+        <h1>Gerador de Nome de Usuário</h1>
         <form method="post">
-            <input type="number" name="numero" placeholder="Digite um número" step="any" value="<?= htmlspecialchars($numero) ?>" required>
-            <button type="submit">Exibir Tabuada</button>
+            <input type="text" name="nome" placeholder="Digite o nome completo" value="<?= htmlspecialchars($nomeCompleto) ?>" required>
+            <button type="submit">Gerar</button>
         </form>
-        <?php if ($resultado): ?>
-            <div class="resultado"><?= $resultado ?></div>
+        <?php if ($usuario): ?>
+            <div class="resultado">
+                Nome de usuário: <strong><?= $usuario ?></strong>
+            </div>
         <?php endif; ?>
     </div>
 </body>

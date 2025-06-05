@@ -50,15 +50,24 @@
     <div class="titulo">
         <div class="link"><a href="exer1/index.php">exer1</a></div>
         <div class="link"><a href="exer2/index.php">exer2</a></div>
-        <div class="link"><a href="exer3.php">exer3</a></div>
-        <div class="link"><a href="exer4.php">exer4</a></div>
-        <div class="link"><a href="exer5.php">exer5</a></div>
-        <div class="link"><a href="exer6.php">exer6</a></div>
-        <div class="link"><a href="exer7.php">exer7</a></div>
-        <div class="link"><a href="exer8.php">exer8</a></div>
-        <div class="link"><a href="exer9.php">exer9</a></div>
-        <div class="link"><a href="exer10.php">exer10</a></div>
-        <div class="link"><a href="exer11.php">exer11</a></div>
+        <div class="link"><a href="exer3/index.php">exer3</a></div>
+        <div class="link"><a href="exer4/index.php">exer4</a></div>
+        <div class="link"><a href="exer5/index.php">exer5</a></div>
+        <div class="link"><a href="exer6/index.php">exer6</a></div>
+        <div class="link"><a href="exer7/index.php">exer7</a></div>
+        <div class="link"><a href="exer8/index.php">exer8</a></div>
+        <div class="link"><a href="exer9/index.php">exer9</a></div>
+        <div class="link"><a href="exer10/index.php">exer10</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
+        <div class="link"><a href="exer11/index.php">exer11</a></div>
     </div>
 
 </body>

@@ -1,16 +1,18 @@
 <?php
-$resultado = "";
-$numero = "";
+$nota = "";
+$notaRound = "";
+$notaCeil = "";
+$notaFloor = "";
+$erro = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $numero = $_POST["numero"] ?? "";
-    if (!is_numeric($numero)) {
-        $resultado = "Por favor, digite um número válido.";
+    $nota = $_POST["nota"] ?? "";
+    if (!is_numeric($nota)) {
+        $erro = "Digite uma nota válida.";
     } else {
-        $resultado = "Tabuada do <strong>$numero</strong>:<br>";
-        for ($i = 1; $i <= 10; $i++) {
-            $resultado .= "$numero x $i = <strong>" . ($numero * $i) . "</strong><br>";
-        }
+        $notaRound = round($nota);
+        $notaCeil = ceil($nota);
+        $notaFloor = floor($nota);
     }
 }
 ?>
@@ -20,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabuada</title>
+    <title>Arredondador de Notas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -56,17 +58,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin-top: 20px;
             font-size: 1.2em;
         }
+        .erro {
+            color: red;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Tabuada</h1>
+        <h1>Arredondador de Notas</h1>
         <form method="post">
-            <input type="number" name="numero" placeholder="Digite um número" step="any" value="<?= htmlspecialchars($numero) ?>" required>
-            <button type="submit">Exibir Tabuada</button>
+            <input type="number" name="nota" placeholder="Digite a nota" step="0.01" value="<?= htmlspecialchars($nota) ?>" required>
+            <button type="submit">Arredondar</button>
         </form>
-        <?php if ($resultado): ?>
-            <div class="resultado"><?= $resultado ?></div>
+        <?php if (!empty($erro)): ?>
+            <div class="erro"><?= $erro ?></div>
+        <?php endif; ?>
+        <?php if ($notaRound !== "" && empty($erro)): ?>
+            <div class="resultado">
+                Nota original: <strong><?= $nota ?></strong><br>
+                Arredondada (round): <strong><?= $notaRound ?></strong><br>
+                Arredondada para cima (ceil): <strong><?= $notaCeil ?></strong><br>
+                Arredondada para baixo (floor): <strong><?= $notaFloor ?></strong>
+            </div>
         <?php endif; ?>
     </div>
 </body>
