@@ -51,7 +51,7 @@
         <div class="link"><a href="exer1/exer1.php">exercício 1</a></div>
         <div class="link"><a href="exer2/exer2.php">exercício 2</a></div>
         <div class="link"><a href="exer3/exer3.php">exercício 3</a></div>
-        <div class="link"><a href="exe4/exer4.php">exercício 4</a></div>
+        <div class="link"><a href="exer4/exer4.php">exercício 4</a></div>
         <div class="link"><a href="exer5/exer5.php">exercício 5</a></div>
         <div class="link"><a href="exer6/exer6.php">exercício 6</a></div>
         <div class="link"><a href="exer7/exer7.php">exercício 7</a></div>
